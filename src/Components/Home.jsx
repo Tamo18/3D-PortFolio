@@ -22,7 +22,7 @@ const [currentStage,setCurrentStage]=useState(1)
 
  const screenParams=()=>{
     let screenScale=null
-    let screenPosition=[0,-8.5,-43]
+    let screenPosition=[0,-2.5,-12]
     let rotation=[0.1,4.7,0]
     if(window.innerWidth<768){
     screenScale=[0.9,0.9,0.9]
@@ -39,12 +39,14 @@ const[scale,pos,rotat]=screenParams();
  const planeParams=()=>{
     let screenScale,screenPosition
     if(window.innerWidth<768){
-    screenScale=[1.5,1.5,1.5]
+    screenScale=[0.10,0.10,0.10]
      screenPosition=[0,-1.5,0]   
     }
     else{
-    screenScale=[3,3,3]
-    screenPosition=[0,-4,-4]
+    // screenScale=[2,2,2]
+    // screenPosition=[0,-2.6,-4]
+    screenScale=[0.16,0.24,0.24]
+    screenPosition=[1,-2.6,-4]
     }
  return [screenScale,screenPosition]   
  }

@@ -38,6 +38,8 @@ else{
        <mesh ref={birdRef} 
        position={[-5,2,1]} 
        scale={[0.003,0.003,0.003]}>
+      {/* //  position={[-5,0.2,0.1]} 
+      //  scale={[0.31,0.31,0.31]}> */}
         <primitive object={scene}/>
        </mesh>
     )

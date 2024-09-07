@@ -1,6 +1,7 @@
 import React from "react";
 import { skills } from "../constants";
 import CTA from "./CTA";
+import { socialLinks } from "../constants";
 
 const About=()=>{
     return (
@@ -11,7 +12,7 @@ const About=()=>{
 
     <div className="mt-5 flex flex-col gap-3 text-slate-500 font-mono">
     <p>
-    Web Developer Based in <span className="blue-gradient_text">India</span>, passionate about creating seamless and innovative online experiences. When I'm not coding, you'll find me jamming out to my favorite tunes or catching up on the latest cricket matches. As a movie buff, I enjoy exploring different genres and diving into new cinematic worlds.Fluent in Bengali, Hindi, and English, I navigate cultures and conversations with ease, adding a multilingual touch to my work and interactions. 
+    Web Developer and Data Analysis enthusiast Based in <span className="blue-gradient_text">India</span>, passionate about creating seamless and innovative online experiences. When I'm not coding, you'll find me jamming out to my favorite tunes or catching up on the latest cricket matches. As a movie buff, I enjoy exploring different genres and diving into new cinematic worlds.Fluent in Bengali, Hindi, and English, I navigate cultures and conversations with ease, adding a multilingual touch to my work and interactions. 
     </p>
     </div>
 
@@ -51,6 +52,18 @@ const About=()=>{
         <h3 className="subhead-text">
         Social <span className="blue-gradient_text font-semibold drop-shadow">Links</span>
         </h3>
+        <div className="mt-16 flex-wrap flex gap-12">
+     {socialLinks.map((link)=>(
+        <div className="block-container w-20 h-20">
+            <div className="btn-back rounded-xl"/>
+            <div className=" btn-front rounded-xl flex justify-center items-center ">
+                <a href={link.link} className="h-1/2 w-1/2 object-contain">
+                <img src={link.iconUrl} alt={link.name} />
+                </a>
+            </div>
+        </div>
+     ))}
+     </div>
         <div>
             
         </div> 

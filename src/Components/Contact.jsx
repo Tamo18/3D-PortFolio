@@ -2,7 +2,7 @@ import React, { useRef, useState, Suspense } from "react";
 import emailjs from '@emailjs/browser'
 import { Canvas } from "@react-three/fiber";
 // import { Loader } from "@react-three/drei";
-import {Fox} from "../models/Fox"
+import {Conatct_ani} from "../models/Contact_ani"
 import useAlert from "../hooks/useAlert";
 import Loader from "./Loader";
 import Alert from "./Alert";
@@ -12,7 +12,7 @@ const Contact=()=>{
 const formRef=useRef()
 const [form,setForm]=useState({name:'',email:'',message:''})
 const [isLoading,setIsLoading]=useState(false)
-const [currentAnimation,setCurrentAnimation]=useState('idle')
+const [currentAnimation,setCurrentAnimation]=useState('')
 
 const handleClick=(e)=>{
 setForm({...form,[e.target.name]:e.target.value})
@@ -20,14 +20,17 @@ setForm({...form,[e.target.name]:e.target.value})
 
 const {alert,showAlert,hideAlert}=useAlert()
 
-const handleFocus=()=>setCurrentAnimation('walk')
+const handleFocus=()=>{
+   setCurrentAnimation('')
+}
 
-const handleBlur=()=>setCurrentAnimation('idle')
+const handleBlur=()=>setCurrentAnimation('')
 
 const handleSubmit=(e)=>{
 e.preventDefault()
 setIsLoading(true)
-setCurrentAnimation('hit')
+setCurrentAnimation('Scene')
+
 emailjs.send(
    'service_4ilrrsc',
    'template_nbe5are'
@@ -134,7 +137,7 @@ showAlert({show:true,type:'danger',text:'Oops!Something went wrong'})
       <directionalLight position={[0,0,1]} intensity={2.5}/> 
       <ambientLight intensity={0.5}/>
       <Suspense fallback={<Loader/>}>
-         <Fox
+         <Conatct_ani
          currentAnimation={currentAnimation}
          position={[0.5,0.35,0]}
          rotation={[12.6,-0.6,0]}
